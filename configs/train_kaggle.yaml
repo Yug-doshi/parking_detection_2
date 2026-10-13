@@ -1,0 +1,20 @@
+# YOLOv8 training hyperparameters for Kaggle GPU (user request: 50 epochs)
+# Use with notebooks/ParkingDetection_Kaggle.ipynb or:
+#   python src/train.py --model yolov8s.pt --epochs 50 --batch 16 --device 0 ...
+
+model: yolov8s.pt
+imgsz: 640
+epochs: 50
+batch: 16
+optimizer: auto
+lr0: 0.01
+seed: 42
+workers: 2
+patience: 15
+device: "0"
+project: runs
+name: slot_det
+
+# Train only the parking-slot occupancy model from Parking_dataset_2.
+# Its labels do not support vehicle-instance or parking-violation training.
+# Drop batch to 8 or 4 on OOM; optional stronger model: yolov8m.pt with batch 8.

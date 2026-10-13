@@ -1,0 +1,13 @@
+# Default YOLOv8 training hyperparameters (CPU-safe defaults)
+model: yolov8n.pt
+imgsz: 640
+epochs: 30
+batch: 8
+optimizer: auto
+lr0: 0.01
+seed: 42
+workers: 2
+patience: 10
+device: cpu
+project: runs
+name: slot_det
