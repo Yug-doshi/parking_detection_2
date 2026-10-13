@@ -1,0 +1,26 @@
+{
+  "detection": {
+    "weights": "weights\\slot_det_best.pt",
+    "data": "dataset\\space\\data.yaml",
+    "split": "test",
+    "map50": 0.9844934907694746,
+    "map50_95": 0.6293042356577307,
+    "precision": 0.9492018487730755,
+    "recall": 0.9564648567125249,
+    "per_class_map50_95": [
+      0.6600794491497941,
+      0.5985290221656675
+    ]
+  },
+  "geometry_proxy": {
+    "note": "Geometry proxy metrics use occupied-slot boxes as vehicles. Not a substitute for manually verified wrong-parking labels.",
+    "images": 50,
+    "unique_vehicles_seen": 1937,
+    "free_slots_gt_total": 2271,
+    "free_slots_pred_total": 1995,
+    "slot_occupancy_agreement": 0.9344,
+    "proxy_correct_parking_count": 1776,
+    "proxy_false_wrong_when_high_inside": 161,
+    "wrong_parking_metrics": "UNAVAILABLE \u2014 dataset has no wrong-parking ground truth"
+  }
+}

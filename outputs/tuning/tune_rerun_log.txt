@@ -1,0 +1,16 @@
+{
+  "selected": {
+    "overrides": {
+      "vehicle_inside_min": 0.85,
+      "outside_max": 0.1,
+      "adjacent_intrusion_min": 0.15,
+      "slot_assign_min": 0.3
+    },
+    "slot_occupancy_agreement": 0.933,
+    "free_false_positives": 0,
+    "proxy_false_wrong_rate_high_inside": 0.2365,
+    "score": 0.8148
+  },
+  "wrote": "D:\\RMS 4\\parking-detection\\configs\\thresholds_selected.yaml"
+}
+TUNE_OK

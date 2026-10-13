@@ -1,0 +1,134 @@
+{
+  "n_images": 8,
+  "avg_latency_ms": 1570.51,
+  "results": [
+    {
+      "file": "2012-12-12_16_55_13_jpg.rf.89d9d54e08c28e96bfd2a0d428905eec.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 0,
+        "correctly_occupied_slots": 12,
+        "wrong_affected_slots": 16,
+        "correct_parking_vehicles": 17,
+        "wrong_parking_vehicles": 9,
+        "uncertain_detections": 0,
+        "unique_vehicles": 26,
+        "available_spaces": 0,
+        "occupancy_percent": 100.0
+      },
+      "latency_ms": 2017.05
+    },
+    {
+      "file": "2012-12-22_13_05_09_jpg.rf.2c6a5d75b04884ea0899ba1d623c23b2.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 25,
+        "correctly_occupied_slots": 2,
+        "wrong_affected_slots": 1,
+        "correct_parking_vehicles": 1,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 1,
+        "available_spaces": 25,
+        "occupancy_percent": 10.71
+      },
+      "latency_ms": 88.46
+    },
+    {
+      "file": "2013-01-18_12_30_08_jpg.rf.64da7c8d00defd0d4963b473e65acfb5.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 20,
+        "correctly_occupied_slots": 3,
+        "wrong_affected_slots": 5,
+        "correct_parking_vehicles": 4,
+        "wrong_parking_vehicles": 1,
+        "uncertain_detections": 0,
+        "unique_vehicles": 5,
+        "available_spaces": 20,
+        "occupancy_percent": 28.57
+      },
+      "latency_ms": 536.24
+    },
+    {
+      "file": "2013-01-20_14_25_10_jpg.rf.1c669fff289f8a08f1401dc26db777e6.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 28,
+        "correctly_occupied_slots": 0,
+        "wrong_affected_slots": 0,
+        "correct_parking_vehicles": 0,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 0,
+        "available_spaces": 28,
+        "occupancy_percent": 0.0
+      },
+      "latency_ms": 6.74
+    },
+    {
+      "file": "2013-01-29_14_21_16_jpg.rf.b0c40d38b00b66ffcd58ae023e8991a3.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 0,
+        "correctly_occupied_slots": 18,
+        "wrong_affected_slots": 10,
+        "correct_parking_vehicles": 22,
+        "wrong_parking_vehicles": 6,
+        "uncertain_detections": 0,
+        "unique_vehicles": 28,
+        "available_spaces": 0,
+        "occupancy_percent": 100.0
+      },
+      "latency_ms": 2160.34
+    },
+    {
+      "file": "2013-03-06_16_00_11_jpg.rf.59e79adb6fc66cadfe8d110775d78b29.jpg",
+      "summary": {
+        "total_slots": 40,
+        "free_slots": 0,
+        "correctly_occupied_slots": 38,
+        "wrong_affected_slots": 2,
+        "correct_parking_vehicles": 38,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 38,
+        "available_spaces": 0,
+        "occupancy_percent": 100.0
+      },
+      "latency_ms": 4043.07
+    },
+    {
+      "file": "2013-03-13_06_35_00_jpg.rf.c641b81746f6140f12452194ae44828c.jpg",
+      "summary": {
+        "total_slots": 40,
+        "free_slots": 40,
+        "correctly_occupied_slots": 0,
+        "wrong_affected_slots": 0,
+        "correct_parking_vehicles": 0,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 0,
+        "available_spaces": 40,
+        "occupancy_percent": 0.0
+      },
+      "latency_ms": 8.13
+    },
+    {
+      "file": "2013-03-19_11_15_06_jpg.rf.8daf6776ca4677b329e570cb011ed433.jpg",
+      "summary": {
+        "total_slots": 40,
+        "free_slots": 1,
+        "correctly_occupied_slots": 38,
+        "wrong_affected_slots": 1,
+        "correct_parking_vehicles": 38,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 38,
+        "available_spaces": 1,
+        "occupancy_percent": 97.5
+      },
+      "latency_ms": 3704.04
+    }
+  ]
+}

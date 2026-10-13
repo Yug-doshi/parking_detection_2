@@ -1,0 +1,23 @@
+{
+  "n_images": 1,
+  "avg_latency_ms": 1828.49,
+  "results": [
+    {
+      "file": "Pasted Image.png",
+      "summary": {
+        "total_slots": 144,
+        "free_slots": 135,
+        "correctly_occupied_slots": 3,
+        "wrong_affected_slots": 6,
+        "unverified_occupied_slots": 0,
+        "correct_parking_vehicles": 3,
+        "wrong_parking_vehicles": 1,
+        "uncertain_detections": 2,
+        "unique_vehicles": 6,
+        "available_spaces": 135,
+        "occupancy_percent": 6.25
+      },
+      "latency_ms": 1828.49
+    }
+  ]
+}

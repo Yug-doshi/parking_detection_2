@@ -1,0 +1,11 @@
+{
+  "data": "dataset\\space\\data.yaml",
+  "model": "weights\\yolov8n.pt",
+  "epochs": 5,
+  "imgsz": 640,
+  "batch": 4,
+  "device": "cpu",
+  "best_weights": "D:\\RMS 4\\parking-detection\\runs\\slot_det\\weights\\best.pt",
+  "last_weights": "D:\\RMS 4\\parking-detection\\runs\\slot_det\\weights\\last.pt",
+  "results_dir": "D:\\RMS 4\\parking-detection\\runs\\slot_det"
+}

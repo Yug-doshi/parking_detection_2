@@ -1,0 +1,5 @@
+{
+  "n_images": 8,
+  "avg_latency_ms": 4806.3
+}
+INFER_DONE

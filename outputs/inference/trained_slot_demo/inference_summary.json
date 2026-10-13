@@ -1,0 +1,134 @@
+{
+  "n_images": 8,
+  "avg_latency_ms": 4806.3,
+  "results": [
+    {
+      "file": "2012-12-12_16_55_13_jpg.rf.89d9d54e08c28e96bfd2a0d428905eec.jpg",
+      "summary": {
+        "total_slots": 32,
+        "free_slots": 2,
+        "correctly_occupied_slots": 6,
+        "wrong_affected_slots": 24,
+        "correct_parking_vehicles": 14,
+        "wrong_parking_vehicles": 12,
+        "uncertain_detections": 0,
+        "unique_vehicles": 26,
+        "available_spaces": 2,
+        "occupancy_percent": 93.75
+      },
+      "latency_ms": 5012.14
+    },
+    {
+      "file": "2012-12-22_13_05_09_jpg.rf.2c6a5d75b04884ea0899ba1d623c23b2.jpg",
+      "summary": {
+        "total_slots": 33,
+        "free_slots": 29,
+        "correctly_occupied_slots": 0,
+        "wrong_affected_slots": 4,
+        "correct_parking_vehicles": 0,
+        "wrong_parking_vehicles": 1,
+        "uncertain_detections": 0,
+        "unique_vehicles": 1,
+        "available_spaces": 29,
+        "occupancy_percent": 12.12
+      },
+      "latency_ms": 1056.69
+    },
+    {
+      "file": "2013-01-18_12_30_08_jpg.rf.64da7c8d00defd0d4963b473e65acfb5.jpg",
+      "summary": {
+        "total_slots": 32,
+        "free_slots": 23,
+        "correctly_occupied_slots": 2,
+        "wrong_affected_slots": 7,
+        "correct_parking_vehicles": 3,
+        "wrong_parking_vehicles": 2,
+        "uncertain_detections": 0,
+        "unique_vehicles": 5,
+        "available_spaces": 23,
+        "occupancy_percent": 28.12
+      },
+      "latency_ms": 972.85
+    },
+    {
+      "file": "2013-01-20_14_25_10_jpg.rf.1c669fff289f8a08f1401dc26db777e6.jpg",
+      "summary": {
+        "total_slots": 28,
+        "free_slots": 28,
+        "correctly_occupied_slots": 0,
+        "wrong_affected_slots": 0,
+        "correct_parking_vehicles": 0,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 0,
+        "available_spaces": 28,
+        "occupancy_percent": 0.0
+      },
+      "latency_ms": 422.05
+    },
+    {
+      "file": "2013-01-29_14_21_16_jpg.rf.b0c40d38b00b66ffcd58ae023e8991a3.jpg",
+      "summary": {
+        "total_slots": 31,
+        "free_slots": 1,
+        "correctly_occupied_slots": 4,
+        "wrong_affected_slots": 26,
+        "correct_parking_vehicles": 11,
+        "wrong_parking_vehicles": 17,
+        "uncertain_detections": 0,
+        "unique_vehicles": 28,
+        "available_spaces": 1,
+        "occupancy_percent": 96.77
+      },
+      "latency_ms": 2854.92
+    },
+    {
+      "file": "2013-03-06_16_00_11_jpg.rf.59e79adb6fc66cadfe8d110775d78b29.jpg",
+      "summary": {
+        "total_slots": 48,
+        "free_slots": 3,
+        "correctly_occupied_slots": 23,
+        "wrong_affected_slots": 22,
+        "correct_parking_vehicles": 32,
+        "wrong_parking_vehicles": 6,
+        "uncertain_detections": 0,
+        "unique_vehicles": 38,
+        "available_spaces": 3,
+        "occupancy_percent": 93.75
+      },
+      "latency_ms": 12901.35
+    },
+    {
+      "file": "2013-03-13_06_35_00_jpg.rf.c641b81746f6140f12452194ae44828c.jpg",
+      "summary": {
+        "total_slots": 43,
+        "free_slots": 43,
+        "correctly_occupied_slots": 0,
+        "wrong_affected_slots": 0,
+        "correct_parking_vehicles": 0,
+        "wrong_parking_vehicles": 0,
+        "uncertain_detections": 0,
+        "unique_vehicles": 0,
+        "available_spaces": 43,
+        "occupancy_percent": 0.0
+      },
+      "latency_ms": 2533.46
+    },
+    {
+      "file": "2013-03-19_11_15_06_jpg.rf.8daf6776ca4677b329e570cb011ed433.jpg",
+      "summary": {
+        "total_slots": 47,
+        "free_slots": 3,
+        "correctly_occupied_slots": 27,
+        "wrong_affected_slots": 17,
+        "correct_parking_vehicles": 32,
+        "wrong_parking_vehicles": 6,
+        "uncertain_detections": 0,
+        "unique_vehicles": 38,
+        "available_spaces": 3,
+        "occupancy_percent": 93.62
+      },
+      "latency_ms": 12696.94
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "selection_reason": "Highest validation score = slot occupancy agreement \u2212 0.5 \u00d7 proxy false-wrong rate on vehicles with R_vehicle\u22650.95. Test set was not used.",
+  "selected": {
+    "overrides": {
+      "vehicle_inside_min": 0.85,
+      "outside_max": 0.1,
+      "adjacent_intrusion_min": 0.15,
+      "slot_assign_min": 0.3
+    },
+    "slot_occupancy_agreement": 0.933,
+    "free_false_positives": 0,
+    "proxy_false_wrong_rate_high_inside": 0.2365,
+    "score": 0.8148
+  },
+  "top5": [
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.1,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.3074,
+      "score": 0.7793
+    }
+  ],
+  "all": [
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.15,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.2365,
+      "score": 0.8148
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.1,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.3074,
+      "score": 0.7793
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.85,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.1,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.3074,
+      "score": 0.7793
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.1,
+        "adjacent_intrusion_min": 0.1,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.3074,
+      "score": 0.7793
+    },
+    {
+      "overrides": {
+        "vehicle_inside_min": 0.9,
+        "outside_max": 0.15,
+        "adjacent_intrusion_min": 0.1,
+        "slot_assign_min": 0.3
+      },
+      "slot_occupancy_agreement": 0.933,
+      "free_false_positives": 0,
+      "proxy_false_wrong_rate_high_inside": 0.3074,
+      "score": 0.7793
+    }
+  ]
+}

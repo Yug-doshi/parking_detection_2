@@ -1,0 +1,10 @@
+{
+  "n_images": 8,
+  "avg_latency_ms": 1570.51
+}
+wrote D:\RMS 4\parking-detection\outputs\inference\synthetic_wrong_parking_demo.jpg
+summary {'total_slots': 4, 'free_slots': 1, 'correctly_occupied_slots': 0, 'wrong_affected_slots': 3, 'correct_parking_vehicles': 1, 'wrong_parking_vehicles': 2, 'uncertain_detections': 0, 'unique_vehicles': 3, 'available_spaces': 1, 'occupancy_percent': 75.0}
+CORRECT_PARKING Slot-01 within slot bounds ['Slot-01']
+WRONG_PARKING Slot-02 overlaps Slot-02, Slot-01 ['Slot-02', 'Slot-01']
+WRONG_PARKING Slot-04 outside 51% ['Slot-04']
+ALL_DEMO_DONE

@@ -1,0 +1,5 @@
+{
+  "n_images": 8,
+  "avg_latency_ms": 2229.56
+}
+FINAL_BATCH_DONE

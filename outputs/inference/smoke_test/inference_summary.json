@@ -1,0 +1,22 @@
+{
+  "n_images": 1,
+  "avg_latency_ms": 7704.39,
+  "results": [
+    {
+      "file": "2012-09-11_16_48_36_jpg.rf.4ecc8c87c61680ccc73edc218a2c8d7d.jpg",
+      "summary": {
+        "total_slots": 111,
+        "free_slots": 12,
+        "correctly_occupied_slots": 43,
+        "wrong_affected_slots": 56,
+        "correct_parking_vehicles": 48,
+        "wrong_parking_vehicles": 30,
+        "uncertain_detections": 7,
+        "unique_vehicles": 85,
+        "available_spaces": 12,
+        "occupancy_percent": 89.19
+      },
+      "latency_ms": 7704.39
+    }
+  ]
+}

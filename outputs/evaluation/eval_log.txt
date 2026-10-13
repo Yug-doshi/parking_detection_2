@@ -1,0 +1,38 @@
+Ultralytics 8.4.27  Python-3.10.7 torch-2.7.1+cu118 CPU (12th Gen Intel Core i5-1240P)
+Model summary (fused): 73 layers, 3,006,038 parameters, 0 gradients, 8.1 GFLOPs
+[34m[1mval: [0mFast image access  (ping: 0.20.0 ms, read: 5.20.9 MB/s, size: 73.3 KB)
+[K[34m[1mval: [0mScanning D:\RMS 4\parking-detection\dataset\space\test\labels... 15 images, 0 backgrounds, 0 corrupt: 15% ━╸────────── 15/100 41.0it/s 0.1s<2.1s[K[34m[1mval: [0mScanning D:\RMS 4\parking-detection\dataset\space\test\labels... 56 images, 0 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 56/100 151.1it/s 0.2s<0.3s[K[34m[1mval: [0mScanning D:\RMS 4\parking-detection\dataset\space\test\labels... 100 images, 1 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 100/100 331.4it/s 0.3s
+[34m[1mval: [0mNew cache created: D:\RMS 4\parking-detection\dataset\space\test\labels.cache
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 14% ━╸────────── 1/7 16.4s/it 4.9s<1:38[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 29% ━━━───────── 2/7 13.6s/it 14.7s<1:08[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 43% ━━━━━─────── 3/7 13.7s/it 28.5s<54.8s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 57% ━━━━━━╸───── 4/7 11.1s/it 36.2s<33.2s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 71% ━━━━━━━━╸─── 5/7 7.7s/it 40.7s<15.4s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 86% ━━━━━━━━━━── 6/7 6.9s/it 46.3s<6.9s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 7/7 6.9s/it 48.1s
+                   all        100       6036      0.949      0.956      0.984      0.629
+           space-empty         89       3294      0.931      0.973      0.982       0.66
+        space-occupied         80       2742      0.967       0.94      0.987      0.599
+Speed: 6.1ms preprocess, 317.5ms inference, 0.0ms loss, 75.3ms postprocess per image
+Results saved to [1mD:\RMS 4\parking-detection\runs\val_slot_det_best[0m
+{
+  "detection": {
+    "weights": "weights\\slot_det_best.pt",
+    "data": "dataset\\space\\data.yaml",
+    "split": "test",
+    "map50": 0.9844934907694746,
+    "map50_95": 0.6293042356577307,
+    "precision": 0.9492018487730755,
+    "recall": 0.9564648567125249,
+    "per_class_map50_95": [
+      0.6600794491497941,
+      0.5985290221656675
+    ]
+  },
+  "geometry_proxy": {
+    "note": "Geometry proxy metrics use occupied-slot boxes as vehicles. Not a substitute for manually verified wrong-parking labels.",
+    "images": 50,
+    "unique_vehicles_seen": 1937,
+    "free_slots_gt_total": 2271,
+    "free_slots_pred_total": 1995,
+    "slot_occupancy_agreement": 0.9344,
+    "proxy_correct_parking_count": 1776,
+    "proxy_false_wrong_when_high_inside": 161,
+    "wrong_parking_metrics": "UNAVAILABLE \u2014 dataset has no wrong-parking ground truth"
+  }
+}
+EVAL_DONE
