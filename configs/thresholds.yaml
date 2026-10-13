@@ -2,24 +2,24 @@
 # Initial engineering values from project requirements — not universal truths.
 
 # Tuned on validation (see outputs/tuning/threshold_search.json). Test set unused.
-vehicle_inside_min: 0.80          # min R_vehicle for confident CORRECT PARKING
-likely_correct_min_inside_ratio: 0.45 # allow more valid vehicles to resolve to blue instead of uncertain
-outside_max: 0.15                 # slightly more tolerance for slot-alignment noise
-wrong_parking_min_outside_ratio: 0.55 # still require strong outside evidence before red
-slot_assign_min: 0.20             # lower threshold to keep valid slot fits from being dropped
-minimum_second_slot_intrusion_ratio: 0.12  # reduce false UNCERTAIN on mild multi-slot overlap
-minimum_vehicle_slot_size_ratio_for_straddle: 1.40  # keep straddle logic active for realistic parked vehicle sizes
-minimum_second_slot_overlap_ratio: 0.45   # allow legitimate split-slot cases to be recognized early
-vehicle_straddle_min_aspect_ratio: 1.60    # accept common elongated parked cars without over-rejecting
-boundary_crossing_tolerance: 0.06 # allow a small boundary band without calling a car wrong
-slot_coverage_occupied_min: 0.25  # lower threshold so weak but valid occupancy is not missed
-usable_free_max_intrusion: 0.08   # allow a little extra margin before marking a slot as obstructed
+vehicle_inside_min: 0.85          # min R_vehicle for CORRECT PARKING
+likely_correct_min_inside_ratio: 0.50 # higher-recall blue classification when assigned to one slot without a straddle
+outside_max: 0.10                 # max R_outside for CORRECT PARKING
+wrong_parking_min_outside_ratio: 0.70 # require at least 70% estimated outside area before calling a single-slot violation
+slot_assign_min: 0.30             # min R_vehicle to assign car to a slot
+minimum_second_slot_intrusion_ratio: 0.20  # vehicle area beyond primary slot tolerance required to flag a slot straddle
+minimum_vehicle_slot_size_ratio_for_straddle: 1.50  # ignore slot-boundary splits when the car fits one slot
+minimum_second_slot_overlap_ratio: 0.50   # require very substantial overlap for learned-box fallback
+vehicle_straddle_min_aspect_ratio: 1.80    # restrict fallback to strongly elongated horizontal vehicles
+boundary_crossing_tolerance: 0.05 # ignore intrusion within 5% of the vehicle's short dimension
+slot_coverage_occupied_min: 0.30  # min R_slot for physical occupancy
+usable_free_max_intrusion: 0.05   # max intrusion for usable availability
 
-# Keep valid detections from being discarded as uncertain when geometry is strong.
+# Keep weak vehicle detections visible as uncertain instead of dropping them.
 vehicle_detection_conf_min: 0.10
-vehicle_conf_min: 0.15
-slot_conf_min: 0.05               # keep weak slot boxes from being dropped before occupancy logic can evaluate them
-uncertain_conf_max: 0.60          # keep medium-confidence but geometrically good cars from being stranded as uncertain
+vehicle_conf_min: 0.25
+slot_conf_min: 0.25
+uncertain_conf_max: 0.40          # below this (but above conf_min): UNCERTAIN
 nms_iou: 0.45
 vehicle_tile_size: 256
 slot_tile_size: 256

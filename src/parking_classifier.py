@@ -20,19 +20,19 @@ from geometry import (
 
 
 DEFAULT_THRESHOLDS = {
-    "vehicle_inside_min": 0.80,
-    "likely_correct_min_inside_ratio": 0.45,
-    "outside_max": 0.15,
-    "wrong_parking_min_outside_ratio": 0.55,
-    "slot_assign_min": 0.20,
-    "minimum_second_slot_intrusion_ratio": 0.12,
-    "boundary_crossing_tolerance": 0.06,
-    "slot_coverage_occupied_min": 0.25,
-    "usable_free_max_intrusion": 0.08,
+    "vehicle_inside_min": 0.90,
+    "likely_correct_min_inside_ratio": 0.65,
+    "outside_max": 0.10,
+    "wrong_parking_min_outside_ratio": 0.10,
+    "slot_assign_min": 0.30,
+    "minimum_second_slot_intrusion_ratio": 0.15,
+    "boundary_crossing_tolerance": 0.05,
+    "slot_coverage_occupied_min": 0.30,
+    "usable_free_max_intrusion": 0.05,
     "vehicle_detection_conf_min": 0.10,
-    "vehicle_conf_min": 0.15,
-    "slot_conf_min": 0.05,
-    "uncertain_conf_max": 0.60,
+    "vehicle_conf_min": 0.25,
+    "slot_conf_min": 0.25,
+    "uncertain_conf_max": 0.40,
     "nms_iou": 0.45,
 }
 
@@ -94,17 +94,15 @@ def detect_wrong_parking(
     straddle_aspect_min = thresholds.get("vehicle_straddle_min_aspect_ratio", 1.0)
     boundary_tolerance_ratio = thresholds["boundary_crossing_tolerance"]
 
-    assignment: MultiSlotOverlap = assign_vehicle_to_slot(vehicle, slots, assign_min=assign_min)
-    primary = assignment.primary
-    strong_single_slot_fit = primary is not None and primary.r_vehicle >= max(likely_correct_inside_min, 0.45)
-
-    if vehicle.confidence < conf_min and not strong_single_slot_fit:
+    if vehicle.confidence < conf_min:
         return VehicleParkingResult(
             vehicle=vehicle,
             status="UNCERTAIN",
             reason="below confidence floor",
         )
     low_confidence = vehicle.confidence < uncertain_max
+    assignment: MultiSlotOverlap = assign_vehicle_to_slot(vehicle, slots, assign_min=assign_min)
+    primary = assignment.primary
 
     if primary is None:
         if low_confidence:
@@ -273,8 +271,7 @@ def calculate_slot_occupancy(
 
     out: List[SlotOccupancyResult] = []
     for slot in slots:
-        detector_confidence_gate = slot.confidence >= max(thresholds.get("slot_conf_min", 0.15), 0.35)
-        detector_says_occupied = slot.source_class == "space-occupied" and detector_confidence_gate
+        detector_says_occupied = slot.source_class == "space-occupied"
         best_r = 0.0
         vids: List[int] = []
         statuses: List[str] = []
@@ -293,19 +290,6 @@ def calculate_slot_occupancy(
             for v in vehicles
         )
         usable = not detector_says_occupied
-        if slot.source_class == "space-occupied" and not detector_says_occupied and not physical:
-            status = "FREE"
-            out.append(
-                SlotOccupancyResult(
-                    slot=slot,
-                    status=status,
-                    physical_occupied=False,
-                    usable_available=True,
-                    best_r_slot=best_r,
-                    vehicle_ids=vids,
-                )
-            )
-            continue
         for v in vehicles:
             r_slot = calculate_slot_coverage_ratio(v.bbox, slot.as_polygon())
             r_veh = calculate_vehicle_inside_ratio(v.bbox, slot.as_polygon())

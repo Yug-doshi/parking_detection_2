@@ -154,25 +154,12 @@ def test_occupied_slot_without_vehicle_is_not_reported_free(thr):
         slot_id="Slot-occupied",
         bbox=[100, 100, 200, 200],
         source_class="space-occupied",
-        confidence=0.90,
     )
     frame = classify_frame([], [occupied_slot], thr)
     assert frame.slots[0].status == "OCCUPIED_UNVERIFIED"
     assert frame.slots[0].usable_available is False
     assert frame.summary["free_slots"] == 0
     assert frame.summary["unverified_occupied_slots"] == 1
-
-
-def test_low_confidence_space_occupied_slot_without_vehicle_is_free(thr):
-    weak_occupied_slot = ParkingSlot(
-        slot_id="Slot-weak-occupied",
-        bbox=[100, 100, 200, 200],
-        source_class="space-occupied",
-        confidence=0.10,
-    )
-    frame = classify_frame([], [weak_occupied_slot], thr)
-    assert frame.slots[0].status == "FREE"
-    assert frame.slots[0].usable_available is True
 
 
 def test_6_slot_partially_obstructed_by_wrong_car(thr, slot01, slot02):
@@ -201,8 +188,7 @@ def test_7_two_cars_in_different_slots(thr, slot01, slot02):
 def test_8_low_confidence_vehicle(thr, slot01):
     car = VehicleDetection(0, [155, 110, 255, 190], confidence=0.30)
     r = detect_wrong_parking(car, [slot01], thr)
-    assert r.status == "CORRECT_PARKING"
-    assert r.reason == "low-confidence detection mostly within one slot"
+    assert r.status == "UNCERTAIN"
 
 
 def test_low_confidence_detection_threshold_keeps_uncertain_vehicle_visible(thr, slot01):
@@ -210,8 +196,7 @@ def test_low_confidence_detection_threshold_keeps_uncertain_vehicle_visible(thr,
     car = VehicleDetection(0, [110, 110, 190, 190], confidence=0.15)
     frame = classify_frame([car], [slot01], thr)
     assert len(frame.vehicles) == 1
-    assert frame.vehicles[0].status == "CORRECT_PARKING"
-    assert frame.vehicles[0].reason == "low-confidence detection mostly within one slot"
+    assert frame.vehicles[0].status == "UNCERTAIN"
 
 
 def test_low_confidence_car_with_strong_single_slot_fit_can_be_blue(thr, slot01):
@@ -224,9 +209,6 @@ def test_low_confidence_car_with_strong_single_slot_fit_can_be_blue(thr, slot01)
 
 
 def test_low_confidence_car_outside_slot_stays_uncertain(thr, slot01):
-    thr = dict(thr)
-    thr["wrong_parking_min_outside_ratio"] = 0.85
-    thr["likely_correct_min_inside_ratio"] = 0.75
     car = VehicleDetection(0, [155, 110, 255, 190], confidence=0.30)
 
     result = detect_wrong_parking(car, [slot01], thr)
@@ -313,7 +295,7 @@ def test_car_that_fits_slot_is_not_wrong_from_neighbor_box_split(thr):
     result = detect_wrong_parking(car, [slot_primary, slot_neighbor], thr)
 
     assert result.status != "WRONG_PARKING"
-    assert result.reason == "low confidence"
+    assert result.reason == "borderline slot overlap"
 
 
 def test_large_car_with_subthreshold_neighbor_intrusion_is_wrong(thr):

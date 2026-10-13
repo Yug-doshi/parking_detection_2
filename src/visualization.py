@@ -19,15 +19,7 @@ COLOR_TEXT = (255, 255, 255)
 COLOR_PANEL = (30, 30, 30)
 
 
-def _put_label(
-    img: np.ndarray,
-    text: str,
-    org: Tuple[int, int],
-    color: Tuple[int, int, int],
-    enabled: bool = False,
-) -> None:
-    if not enabled:
-        return
+def _put_label(img: np.ndarray, text: str, org: Tuple[int, int], color: Tuple[int, int, int]) -> None:
     x, y = org
     font = cv2.FONT_HERSHEY_SIMPLEX
     scale, thickness = 0.45, 1
@@ -36,7 +28,7 @@ def _put_label(
     cv2.putText(img, text, (x + 2, y - 2), font, scale, COLOR_TEXT, thickness, cv2.LINE_AA)
 
 
-def _draw_slot(img: np.ndarray, slot_res: SlotOccupancyResult, thin_outline: bool = False, show_labels: bool = False) -> None:
+def _draw_slot(img: np.ndarray, slot_res: SlotOccupancyResult, thin_outline: bool = False) -> None:
     slot = slot_res.slot
     if slot_res.status == "FREE" and slot_res.usable_available:
         color = COLOR_FREE
@@ -66,11 +58,11 @@ def _draw_slot(img: np.ndarray, slot_res: SlotOccupancyResult, thin_outline: boo
         cv2.rectangle(img, (x1, y1), (x2, y2), color, thickness)
         org = (x1, y1 - 2)
 
-    if slot_res.status in ("FREE", "OCCUPIED_UNVERIFIED") and show_labels:
-        _put_label(img, label, (max(0, org[0]), max(14, org[1])), color, enabled=True)
+    if slot_res.status in ("FREE", "OCCUPIED_UNVERIFIED"):
+        _put_label(img, label, (max(0, org[0]), max(14, org[1])), color)
 
 
-def _draw_vehicle(img: np.ndarray, vr: VehicleParkingResult, show_labels: bool = False) -> None:
+def _draw_vehicle(img: np.ndarray, vr: VehicleParkingResult) -> None:
     x1, y1, x2, y2 = map(int, vr.vehicle.bbox)
     conf = vr.vehicle.confidence
     if vr.status == "CORRECT_PARKING":
@@ -89,8 +81,7 @@ def _draw_vehicle(img: np.ndarray, vr: VehicleParkingResult, show_labels: bool =
         text = f"UNCERTAIN | {conf:.2f}"
 
     cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
-    if show_labels:
-        _put_label(img, text, (x1, max(14, y1 - 2)), color, enabled=True)
+    _put_label(img, text, (x1, max(14, y1 - 2)), color)
 
 
 def draw_dashboard(img: np.ndarray, summary: Dict[str, Any]) -> np.ndarray:
@@ -128,15 +119,14 @@ def draw_dashboard(img: np.ndarray, summary: Dict[str, Any]) -> np.ndarray:
 def draw_parking_annotations(
     image: np.ndarray,
     frame_result: ParkingFrameResult,
-    draw_dashboard_overlay: bool = False,
-    show_labels: bool = False,
+    draw_dashboard_overlay: bool = True,
 ) -> np.ndarray:
     out = image.copy()
     for sr in frame_result.slots:
-        _draw_slot(out, sr, show_labels=show_labels)
+        _draw_slot(out, sr)
     for vr in frame_result.vehicles:
-        _draw_vehicle(out, vr, show_labels=show_labels)
-    if draw_dashboard_overlay and show_labels:
+        _draw_vehicle(out, vr)
+    if draw_dashboard_overlay:
         draw_dashboard(out, frame_result.summary)
     return out
 
@@ -144,12 +134,11 @@ def draw_parking_annotations(
 def draw_vehicle_only_annotations(
     image: np.ndarray,
     frame_result: ParkingFrameResult,
-    show_labels: bool = False,
 ) -> np.ndarray:
     """Draw vehicle classifications without slot boxes or free-space labels."""
     out = image.copy()
     for vehicle_result in frame_result.vehicles:
-        _draw_vehicle(out, vehicle_result, show_labels=show_labels)
+        _draw_vehicle(out, vehicle_result)
     return out
 
 

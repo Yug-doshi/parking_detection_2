@@ -31,9 +31,6 @@ def iter_image_tiles(
         raise ValueError("overlap must be between 0 and 1")
 
     height, width = image.shape[:2]
-    if height <= 0 or width <= 0:
-        return
-
     tile_height = min(tile_size, height)
     tile_width = min(tile_size, width)
     for y in _tile_starts(height, tile_height, overlap):
@@ -49,9 +46,7 @@ def touches_tile_edge(
 ) -> bool:
     """Identify likely partial detections clipped by a crop boundary."""
     margin = min(tile_width, tile_height) * margin_ratio
-    x1, y1, x2, y2 = [float(v) for v in bbox]
-    x1, x2 = sorted((x1, x2))
-    y1, y2 = sorted((y1, y2))
+    x1, y1, x2, y2 = bbox
     return x1 <= margin or y1 <= margin or x2 >= tile_width - margin or y2 >= tile_height - margin
 
 
@@ -61,20 +56,18 @@ def suppress_duplicate_detections(
     """Greedily merge duplicate boxes from the full-frame and tiled passes."""
     kept: List[DetectionCandidate] = []
     for candidate in sorted(candidates, key=lambda item: item[0], reverse=True):
-        _, bbox, cls_id = candidate
+        _, bbox, _ = candidate
         x1, y1, x2, y2 = bbox
         area = max(0.0, x2 - x1) * max(0.0, y2 - y1)
         duplicate = False
-        for _, other, other_cls in kept:
-            if cls_id != other_cls:
-                continue
+        for _, other, _ in kept:
             ox1, oy1, ox2, oy2 = other
             intersection = max(0.0, min(x2, ox2) - max(x1, ox1)) * max(
                 0.0, min(y2, oy2) - max(y1, oy1)
             )
             other_area = max(0.0, ox2 - ox1) * max(0.0, oy2 - oy1)
             union = area + other_area - intersection
-            if union > 0.0 and intersection / union >= iou_threshold:
+            if union > 0.0 and intersection / union > iou_threshold:
                 duplicate = True
                 break
         if not duplicate:

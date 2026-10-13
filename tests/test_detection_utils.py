@@ -38,17 +38,3 @@ def test_duplicate_boxes_from_overlapping_tiles_are_suppressed():
 
     assert len(kept) == 2
     assert kept[0][0] == 0.8
-
-
-def test_duplicate_box_at_exact_threshold_is_suppressed_and_classes_stay_separate():
-    kept = suppress_duplicate_detections(
-        [
-            (0.9, [0, 0, 100, 100], 2),
-            (0.8, [50, 0, 150, 100], 2),
-            (0.7, [0, 0, 100, 100], 3),
-        ],
-        iou_threshold=1 / 3,
-    )
-
-    assert len(kept) == 2
-    assert {item[2] for item in kept} == {2, 3}
