@@ -1,0 +1,13 @@
+{
+  "run_id": "20261013_140310",
+  "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\4180b5a1-a3a2-417e-86e7-ef4694b48196\\Pasted Image.png",
+  "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261013_140310_Pasted_Image.png",
+  "vehicles_detected": 46,
+  "slot_predictions": 97,
+  "free_slots": 20,
+  "incorrect_vehicles": 2,
+  "correct_omitted": 8,
+  "uncertain_omitted": 36,
+  "latency_ms": 3187.01,
+  "annotation": "Green=predicted free slot; red=possible incorrect-parking prediction; correct and uncertain vehicle boxes omitted."
+}

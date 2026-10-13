@@ -1,0 +1,130 @@
+{
+  "run_id": "20261012_223506",
+  "models": {
+    "slots": "C:\\Users\\Yug\\Desktop\\parking-detection\\weights\\slot_det_best.pt",
+    "vehicles": "C:\\Users\\Yug\\Desktop\\parking-detection\\weights\\yolov8n.pt"
+  },
+  "annotation": "Green=predicted free slot; red=possible incorrect-parking prediction; correct and uncertain vehicle boxes omitted.",
+  "results": [
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\d479af8d-3b31-4341-912a-80fcad3e7c95\\Pasted Image.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_01_Pasted_Image_1.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 16,
+      "slot_predictions": 100,
+      "free_slots": 76,
+      "incorrect_vehicles": 3,
+      "correct_omitted": 2,
+      "uncertain_omitted": 11,
+      "latency_ms": 2360.48
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\db4d619b-0046-4a89-acbc-83bcd1384b56\\Pasted Image 2.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_02_Pasted_Image_2.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 20,
+      "slot_predictions": 103,
+      "free_slots": 72,
+      "incorrect_vehicles": 3,
+      "correct_omitted": 4,
+      "uncertain_omitted": 13,
+      "latency_ms": 2047.79
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\3a14a25d-01d3-46a5-8f70-4c038c06c77f\\Pasted Image 3.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_03_Pasted_Image_3.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 6,
+      "slot_predictions": 104,
+      "free_slots": 90,
+      "incorrect_vehicles": 2,
+      "correct_omitted": 1,
+      "uncertain_omitted": 3,
+      "latency_ms": 1201.49
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\9116ce1b-d41c-4011-b76a-57fc9f673475\\Pasted Image 4.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_04_Pasted_Image_4.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 8,
+      "slot_predictions": 104,
+      "free_slots": 88,
+      "incorrect_vehicles": 2,
+      "correct_omitted": 1,
+      "uncertain_omitted": 5,
+      "latency_ms": 1366.2
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\a555d370-114d-4f84-b38d-6eae1336c551\\Pasted Image 5.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_05_Pasted_Image_5.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 2,
+      "slot_predictions": 106,
+      "free_slots": 99,
+      "incorrect_vehicles": 1,
+      "correct_omitted": 0,
+      "uncertain_omitted": 1,
+      "latency_ms": 900.91
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\0878db32-abf6-499e-93f9-1a511bcf7c04\\Pasted Image 6.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_06_Pasted_Image_6.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 2,
+      "slot_predictions": 100,
+      "free_slots": 89,
+      "incorrect_vehicles": 1,
+      "correct_omitted": 0,
+      "uncertain_omitted": 1,
+      "latency_ms": 855.79
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\c864da15-d32e-458b-a205-c4f8300b4121\\Pasted Image 7.png",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_07_Pasted_Image_7.png",
+      "image_size": [
+        768,
+        768
+      ],
+      "vehicles_detected": 54,
+      "slot_predictions": 100,
+      "free_slots": 38,
+      "incorrect_vehicles": 5,
+      "correct_omitted": 19,
+      "uncertain_omitted": 30,
+      "latency_ms": 4296.32
+    },
+    {
+      "input": "C:\\Users\\Yug\\AppData\\Roaming\\Code\\agentSessionData\\750e5ee2-a289-494a-98fa-a34d35b80abc\\attachments\\8766aa9d-b5bd-46b1-91eb-f1a0103ebee8\\Pasted Image 8.jpe",
+      "output": "C:\\Users\\Yug\\Desktop\\parking-detection\\myfold\\attached_images\\latest_20261012_223506_08_Pasted_Image_8.png",
+      "image_size": [
+        640,
+        640
+      ],
+      "vehicles_detected": 8,
+      "slot_predictions": 100,
+      "free_slots": 29,
+      "incorrect_vehicles": 0,
+      "correct_omitted": 4,
+      "uncertain_omitted": 4,
+      "latency_ms": 1256.61
+    }
+  ]
+}
