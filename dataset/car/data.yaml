@@ -1,0 +1,8 @@
+path: D:/RMS 4/parking-detection/dataset/car
+train: train/images
+val: valid/images
+test: test/images
+nc: 1
+names: ['car']
+
+# NOTE: car boxes are remapped from space-occupied slot boxes (approximation).

@@ -1,0 +1,6 @@
+path: D:/RMS 4/parking-detection/dataset/space
+train: train/images
+val: valid/images
+test: test/images
+nc: 2
+names: ['space-empty', 'space-occupied']
