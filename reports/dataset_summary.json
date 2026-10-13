@@ -1,0 +1,108 @@
+{
+  "dataset_root": "D:\\RMS 4\\Parking_dataset (1)\\Parking_dataset",
+  "data_yaml": "D:\\RMS 4\\Parking_dataset (1)\\Parking_dataset\\data.yaml",
+  "yaml_contents": {
+    "train": "../train/images",
+    "val": "../valid/images",
+    "test": "../test/images",
+    "nc": 2,
+    "names": [
+      "space-empty",
+      "space-occupied"
+    ],
+    "roboflow": {
+      "workspace": "brad-dwyer",
+      "project": "pklot-1tros",
+      "version": 2,
+      "license": "CC BY 4.0",
+      "url": "https://universe.roboflow.com/brad-dwyer/pklot-1tros/dataset/2"
+    }
+  },
+  "documented_class_mapping": {
+    "0": "space-empty \u2014 valid parking slot with no vehicle (free)",
+    "1": "space-occupied \u2014 valid parking slot containing a vehicle (occupancy, NOT correctness)"
+  },
+  "annotation_format": "YOLOv8 normalized bounding boxes (.txt); rectangular approximations of original PKLot rotated rectangles",
+  "polygons_available": false,
+  "vehicle_instance_annotations": false,
+  "wrong_parking_class_present": false,
+  "limitations": [
+    "Labels are parking-slot occupancy states, not vehicle instances.",
+    "An occupied slot is NOT the same as a correctly parked car.",
+    "No wrong-parking class exists; wrong parking must use geometric overlap analysis.",
+    "Axis-aligned boxes approximate angled PKLot slots \u2014 geometry has rectangular approximation error.",
+    "Wrong-parking accuracy cannot be measured without a separately labeled evaluation set."
+  ],
+  "splits": {
+    "train": {
+      "images": 8691,
+      "labels": 8691,
+      "class_counts": {
+        "space-occupied": 231948,
+        "space-empty": 265908
+      },
+      "issues": {
+        "empty_label": 189
+      }
+    },
+    "valid": {
+      "images": 2483,
+      "labels": 2483,
+      "class_counts": {
+        "space-occupied": 69687,
+        "space-empty": 73629
+      },
+      "issues": {
+        "empty_label": 59
+      }
+    },
+    "test": {
+      "images": 1242,
+      "labels": 1242,
+      "class_counts": {
+        "space-occupied": 34100,
+        "space-empty": 36584
+      },
+      "issues": {
+        "empty_label": 26
+      }
+    }
+  },
+  "class_counts": {
+    "space-occupied": 335735,
+    "space-empty": 376121
+  },
+  "issues": {
+    "empty_label": 274
+  },
+  "image_dimensions": {
+    "640x640": 12416
+  },
+  "image_formats": {
+    ".jpg": 12416
+  },
+  "cross_split_identical_stems": [],
+  "class_balance_percent": {
+    "space-occupied": 47.16,
+    "space-empty": 52.84
+  },
+  "boxes_per_image": {
+    "min": 0,
+    "max": 100,
+    "avg": 57.33
+  },
+  "architecture_recommendation": {
+    "Approach_A_slot_detection": "SUPPORTED \u2014 train YOLOv8 on space-empty / space-occupied",
+    "Approach_B_vehicle_detection": "NOT directly supported \u2014 no vehicle boxes. Options: (1) remap occupied slots to a car class for approximate vehicle training; (2) use COCO-pretrained vehicle classes.",
+    "Approach_C_wrong_parking_geometry": "REQUIRED \u2014 no wrong-parking labels; use vehicle\u2013slot overlap ratios.",
+    "what_dataset_trains_directly": [
+      "free parking slots",
+      "occupied parking slots"
+    ],
+    "what_needs_extra_info": [
+      "vehicle-level boxes or segmentation for accurate car footprint",
+      "manually verified wrong-parking labels for classification metrics",
+      "original PKLot rotated rectangles / polygons for angled slots"
+    ]
+  }
+}
